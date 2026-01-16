@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Ceqell Report</title>
+    
+    <!-- Open Graph / Discord Embed Tags -->
+    <meta property="og:title" content="The Ceqell Report; On Governance" />
+	<meta property="og:description" content="My experiences and takes from my adminship" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#000000">
+
+    <style>
+        body {
+            background-color: #000000;
+            color: #ffffff;
+            font-family: "Roboto", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; 
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        ::selection {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .container {
+            max-width: 672px; /* ~2xl in tailwind */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .icon-box {
+            padding: 1rem;
+            border: 1px solid #262626; /* neutral-800 */
+            background-color: rgba(23, 23, 23, 0.5); /* neutral-900/50 */
+            border-radius: 2px;
+            display: inline-flex;
+        }
+
+        h1 {
+            font-family: serif;
+            font-size: 2.25rem; /* 3xl-4xl range */
+            letter-spacing: 0.025em;
+            margin: 0;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid #262626; /* neutral-800 */
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 1.125rem;
+            color: #a3a3a3; /* neutral-400 */
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin: 0;
+            margin-top: 1rem;
+        }
+
+        .redirect-box {
+            margin-top: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .countdown {
+            font-size: 0.75rem;
+            color: #737373; /* neutral-500 */
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+
+        .manual-link {
+            font-family: monospace;
+            font-size: 0.75rem;
+            color: #525252; /* neutral-600 */
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: color 0.2s, border-color 0.2s;
+            padding-bottom: 2px;
+            cursor: pointer;
+        }
+
+        .manual-link:hover {
+            color: #a3a3a3; /* neutral-400 */
+            border-bottom-color: #a3a3a3;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: .5; }
+        }
+
+        /* Mobile adjustments */
+        @media (max-width: 640px) {
+            h1 { font-size: 1.875rem; }
+            h2 { font-size: 0.9rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- Icon -->
+        <div class="icon-box">
+            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="square" stroke-linejoin="miter">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <line x1="10" y1="9" x2="8" y2="9"></line>
+            </svg>
+        </div>
+
+        <!-- Content -->
+        <div style="width: 100%; max-width: 32rem;">
+            <h1>The Ceqell Report</h1>
+            <h2>Governance and Corruption in RetroStudio</h2>
+        </div>
+
+        <!-- Redirect Logic -->
+        <div class="redirect-box">
+            <div id="countdown-text" class="countdown">Redirecting...</div>
+            <a id="target-link" href="#" class="manual-link">Click here if not redirected automatically</a>
+        </div>
+    </div>
+
+    <script>
+        // Configuration
+        const targetUrl = "https://notebooklm.google.com/notebook/e263e3ce-2bca-4887-a395-c345c8cdbef3";
+        
+        // Element references
+        const countdownEl = document.getElementById('countdown-text');
+        const linkEl = document.getElementById('target-link');
+
+        // Set link href immediately
+        linkEl.href = targetUrl;
+		
+		// Visual update (optional, since it happens so fast)
+        countdownEl.textContent = "Redirecting...";
+
+        // Redirect immediately
+		window.location.replace(targetUrl);
+    </script>
+
+</body>
+</html>
