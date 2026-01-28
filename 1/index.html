@@ -11,43 +11,103 @@
 
     <meta property="og:title" content="The Ceqell Report; On Governance" />
     <meta property="og:description" content="My experiences and takes from my adminship" />
-    <meta property="og:type" content="article" /> <meta property="og:site_name" content="The Ceqell Report" />
+    <meta property="og:type" content="article" /> 
+    <meta property="og:site_name" content="The Ceqell Report" />
     <meta name="theme-color" content="#000000">
+    
     <title>The Ceqell Report; On Governance</title>
+    
     <style>
-        /* Reset default browser margins to ensure full screen */
+        /* 1. Layout Fix: Use Flexbox to keep footer visible */
         body, html {
             margin: 0;
             padding: 0;
             height: 100%;
             width: 100%;
-            overflow: hidden;
+            overflow: hidden; /* Prevents double scrollbars */
+            display: flex;
+            flex-direction: column;
+            font-family: sans-serif; /* Global font setting */
         }
         
-        /* Style the iframe to take up the full viewport */
+        /* 2. Iframe takes remaining space */
         iframe {
+            flex-grow: 1; /* Takes all available space minus the footer */
             width: 100%;
-            height: 100%;
             border: none;
             display: block;
         }
+
+        /* 3. Footer styling */
+        footer {
+            flex-shrink: 0; /* Prevents footer from squishing */
+            padding: 10px;
+            background-color: #f8f9fa;
+            border-top: 1px solid #e9ecef;
+            text-align: center;
+            font-size: 0.85rem;
+            color: #333;
+        }
+
+        /* Link styling */
+        a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Icon alignment */
+        .cc-icons img {
+            height: 16px;
+            vertical-align: middle;
+            margin-left: 2px;
+        }
+        
+        /* Fallback content styling */
+        .pdf-fallback {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .btn-download {
+            background-color: #007bff;
+            color: white !important; /* Force white text */
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+            display: inline-block;
+        }
+        
+        .btn-download:hover {
+            background-color: #0056b3;
+            text-decoration: none;
+        }
+
+        iframe {
+            /* existing styles */
+            min-height: 0; /* Allows the flex item to shrink below its content size */
+        }
+        
     </style>
 </head>
 <body>
     
-    <!-- 
-      The src must match your filename exactly. 
-      The 'type' attribute helps browsers understand how to render it.
-    -->
     <iframe 
         src="theceqellreportongovernance2.pdf" 
         type="application/pdf"
         title="The Ceqell Report on Governance 2">
         
-        <!-- Fallback for legacy browsers or mobile devices that force download -->
-        <div style="text-align: center; padding: 20px; font-family: sans-serif;">
+        <div class="pdf-fallback">
             <p>It appears your web browser does not support embedded PDFs.</p>
-            <a href="theceqellreportongovernance2.pdf" style="background-color: #007bff; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px;">
+            <a href="theceqellreportongovernance2.pdf" class="btn-download">
                 Click here to view the PDF
             </a>
         </div>
@@ -60,7 +120,7 @@
             © 2025 by 
             <a rel="cc:attributionURL dct:creator" property="cc:attributionName" href="https://www.ceqell.org">John D. Ceqell | Khonthee Jaroensiriphan</a> 
             is licensed under 
-            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="license noopener noreferrer" style="display:inline-block;">
+            <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/" target="_blank" rel="license noopener noreferrer" class="cc-icons">
                 CC BY-NC-ND 4.0
                 <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="">
                 <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="">
